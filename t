@@ -94,6 +94,34 @@ int main() {
   printf("After swapping, second number = %.2lf", second);
   return 0;
 }
+import java.util.*;
+class Gat extends Thread
+{
+  public void run()
+  {
+    int i;
+    for(i=0;i<4;i++)
+    {
+      System.out.println("Thread started"+Thread.currentThread().getName()+i);
+    }
+  }
+  
+}
+ class Dcoder
+ {
+   public static void main(String args[])
+   { 
+    System.out.println("Hello, Dcoder!");
+    Gat a=new Gat();
+    Gat b= new Gat();
+    a.setPriority(Thread.MIN_PRIORITY);
+    b.setPriority(Thread.MAX_PRIORITY);
+    a.start();
+    b.start();
+    System.out.println(a.getPriority());
+    
+   }
+ }
 
 / value of second is assigned to first
   first = second;
